@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #message {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: 2px solid #333;
+            background-color: #fff;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        #noButton {
+            position: relative;
+        }
+        #response {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #f00;
+        }
+        #myLove {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff1493;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message">Would you like to go on a date with me?</div>
+
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+
+    <div id="response"></div>
+    <div id="myLove">MY LOVE</div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const responseDiv = document.getElementById('response');
+        const myLoveDiv = document.getElementById('myLove');
+
+        yesButton.addEventListener('click', () => {
+            responseDiv.textContent = "I KNOW YOU WILL SAY YES. LET'S MEET SOMEDAY FOR A DATE";
+            myLoveDiv.style.display = "block"; // Display "MY LOVE"
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const randomX = Math.floor(Math.random() * window.innerWidth - noButton.clientWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight - noButton.clientHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        });
+    </script>
+
+</body>
+</html>
